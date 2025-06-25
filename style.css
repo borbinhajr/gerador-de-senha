@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono&display=swap');
 
+
 :root{
     --branco: white;
     --cor-de-fundo: #00162E;
@@ -73,6 +74,14 @@ body{
 
 .parametro-senha__titulo{
     font-size:24px;
+    
+}
+.borda-botao{
+    border: solid var(--borda);
+    font-size: 24px;
+    color:var(--branco);
+    background-color: var(--fundo-texto);
+    border-bottom: 6px var(--borda);
 }
 
 .parametro-coluna__senha{
