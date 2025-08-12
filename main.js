@@ -40,7 +40,7 @@ geraSenha();
 
 
 function geraSenha(){
-    let alfabeto = ";
+    let alfabeto = '';
     if (checkbox[0].checked){
         alfabeto = alfabeto + letrasMaiusculas;
     }
@@ -64,7 +64,35 @@ function geraSenha(){
         let numeroAleatorio = Math.random()*letrasMaiusculas.length;
         numeroAleatorio = Math.floor(numeroAleatorio);
         senha = senha + letrasMaiusculas(numeroAleatorio);
-    }
-    campoSenha.value = senha;
 }
+
+campoSenha.value = senha;
+classificaSenha(alfabeto.length);
+
+}
+
+
+function classificaSenha(tamanhoAlfabeto){
+    let entropia = tamanhoSenha * Math.log2(tamanhoAlfabeto);
+    console.log(entropia);
+    forcaSenha.classList.remove('fraca','media','forte');
+    if(entropia > 57){
+        forcaSenha.classList.add('forte');
+    } else if (entropia >35 && entropia < 57){
+        forcaSenha.classList.add('media');
+    } else if (entropia <= 35){
+        forcaSenha.classList.add('fraca')
+    }
+    const valorEntropia = document.querySelector('.entopia');
+    valorEntropia.textContent = 2** Math.floor(entropia)/(100e6*60*60*24);
+}
+
+
+
+
+
+
+
+
+
 
